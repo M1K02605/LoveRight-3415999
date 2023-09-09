@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:LoveRight.Pages"
+             x:Class="LoveRight.Pages.MemoryPage"
+             xmlns:models="clr-namespace:LoveRight.Models"
+             Title="MemoryPage">
+    <AbsoluteLayout>
+        <ScrollView
+            AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            AbsoluteLayout.LayoutFlags="All">
+            <VerticalStackLayout
+                Padding="0, 0, 0, 40">
+
+                <Grid
+                    Padding="20"
+                    BackgroundColor="#F1EAE4"
+                    ColumnSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <AbsoluteLayout
+                    Grid.ColumnSpan="2"
+                    Grid.RowSpan="1"
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    BackgroundColor="LightGray"
+                    WidthRequest="256"
+                    HeightRequest="256">
+                        <AbsoluteLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="LoadImage"/>
+                        </AbsoluteLayout.GestureRecognizers>
+
+                        <Label
+                        Text="+"
+                        FontSize="128"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        AbsoluteLayout.LayoutBounds="0.5, 0.5"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+                        <Image
+                            Source="{Binding ImageFilePath}"
+                            Aspect="AspectFill"
+                            AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                            AbsoluteLayout.LayoutFlags="All"/>
+
+                    </AbsoluteLayout>
+
+                </Grid>
+
+                <Grid
+                    Padding="20"
+                    BackgroundColor="#F1EAE4"
+                    ColumnSpacing="10">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    VerticalOptions="Center"
+                    Text="Name:"
+                    FontAttributes="Bold"/>
+
+                <Entry
+                    Grid.ColumnSpan="2"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Text="{Binding Name}"
+                    BackgroundColor="White"
+                    Placeholder="Input name of Memory..."/>
+
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    VerticalOptions="Center"
+                    Text="Date:"
+                    FontAttributes="Bold"/>
+
+                <DatePicker
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Date="01/01/2023" Format="d"/>
+
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    VerticalOptions="Center"
+                    Text="Description:"
+                    FontAttributes="Bold"/>
+
+                    <Entry
+                    Grid.ColumnSpan="2"
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    Text="{Binding Description}"
+                    BackgroundColor="White"
+                    Placeholder="Input Description..."/>
+
+
+                </Grid>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <HorizontalStackLayout
+        AbsoluteLayout.LayoutBounds="1, 1"
+        AbsoluteLayout.LayoutFlags="PositionProportional"
+        Margin="20"
+        Spacing="10">
+            
+            <Button
+                x:Name="SaveButton"
+                Text="Save"
+                Clicked="SaveButton_Clicked"/>
+            
+            <Button
+                x:Name="DeleteButton"
+                Text="Delete"
+                TextColor="Red"
+                Clicked="DeleteButton_Clicked"/>
+        </HorizontalStackLayout>
+
+    </AbsoluteLayout>
+</ContentPage>

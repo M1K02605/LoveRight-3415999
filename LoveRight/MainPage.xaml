@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoveRight.MainPage"
+             Title="INFT_2051">
+
+    <ScrollView>
+        <FlexLayout
+            Direction="Column"
+            JustifyContent="SpaceBetween"
+            AlignContent="Center">
+
+            <Image
+                Source="logo1.png"
+                WidthRequest="200"
+                HeightRequest="200"
+                Margin="100"/>
+
+            <ImageButton
+                Source="add.png"
+                x:Name="ViewMemoryButton"
+                HorizontalOptions="Center"
+                Clicked="ViewMemoryButton_Clicked"/>
+
+        </FlexLayout>
+    </ScrollView>
+</ContentPage>

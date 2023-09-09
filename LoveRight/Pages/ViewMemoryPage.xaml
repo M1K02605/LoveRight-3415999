@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoveRight.Pages.ViewMemoryPage"
+             Title="ViewMemoryPage">
+    <ScrollView>
+        <VerticalStackLayout
+            Margin="20">
+            <ListView
+            x:Name="MemorySelectListView"
+            SelectionMode="None"
+            ItemTapped="MemorySelectListView_ItemTapped"
+            ItemsSource="{Binding Memories}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <VerticalStackLayout>
+                                <Label
+                                Text="{Binding Name}"
+                                FontAttributes="Bold"/>
+                                <Label
+                                Text="{Binding Date}"/>
+                            </VerticalStackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button
+                x:Name="AddMemoryButton"
+                Text="Add Memory"
+                HorizontalOptions="Center"
+                Clicked="AddMemoryButton_Clicked"/>
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
